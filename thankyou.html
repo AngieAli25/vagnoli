@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Richiesta ricevuta - Vagnoli Srl ti contatterà entro 24 ore per il sopralluogo gratuito.">
+  <title>Richiesta inviata | Vagnoli Srl</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23b56749' width='32' height='32' rx='4'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>V</text></svg>" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#b56749',
+            secondary: '#8a360f',
+          },
+          fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .focus-ring:focus { outline: 2px solid #b56749; outline-offset: 2px; }
+  </style>
+</head>
+<body class="font-sans text-gray-900 antialiased">
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-gray-100" role="banner">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigazione principale">
+      <div class="flex items-center justify-between h-16 md:h-18">
+        <a href="index.html" class="focus-ring rounded flex items-center" aria-label="Vagnoli - Home"><img src="Immagini/Logo Vagnoli.png" alt="Vagnoli Srl" class="h-[76px] md:h-[88px] w-auto" width="340" height="92"></a>
+        <a href="index.html" class="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-gray-700 hover:text-primary font-medium transition">Torna alla Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="min-h-[70vh] flex items-center justify-center px-4 py-16 md:py-24">
+    <section class="max-w-2xl mx-auto text-center" aria-labelledby="thankyou-heading">
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center" aria-hidden="true">
+          <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h1 id="thankyou-heading" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Richiesta ricevuta con successo</h1>
+        <p class="text-lg text-gray-600 mb-2">Grazie per averci contattato.</p>
+        <p class="text-gray-600 mb-8">Un nostro tecnico ti risponderà entro <strong>24 ore</strong> per fissare il sopralluogo gratuito e senza impegno. Controlla la tua email e il numero di telefono che hai indicato.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="index.html" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-lg transition focus-ring">Torna alla Home</a>
+          <a href="index.html#servizi" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition focus-ring">Scopri i nostri servizi</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#823419] text-gray-300 py-6 md:py-8 mt-auto" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-center md:text-left">
+        <div>
+          <p class="text-xl font-bold text-white">VAGNOLI</p>
+          <p class="text-gray-300 mt-1">Strutture Metalliche su Misura</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white mb-2 md:mb-3">Link Utili</h3>
+          <ul class="flex flex-col md:flex-row gap-2 md:gap-4" role="list">
+            <li><a href="privacy.html#privacy-policy" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="privacy.html#cookie-policy" class="hover:text-white transition">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/20 mt-6 pt-4 text-center text-gray-300 text-sm">
+        © 2025 Vagnoli Srl. Tutti i diritti riservati.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner (stesso comportamento delle altre pagine) -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] p-4 md:p-6" role="dialog" aria-label="Informativa cookie">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p class="text-gray-700 text-sm md:text-base">
+        Utilizziamo cookie essenziali e analitici anonimi. Continuando accetti la nostra <a href="privacy.html#cookie-policy" class="text-primary font-medium underline hover:no-underline">Cookie Policy</a>.
+      </p>
+      <div class="flex flex-shrink-0 gap-3">
+        <a href="privacy.html#cookie-policy" class="px-4 py-2.5 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 font-medium transition focus-ring">Maggiori info</a>
+        <button type="button" id="cookie-accept" class="px-5 py-2.5 bg-primary hover:bg-secondary text-white font-semibold rounded-lg transition focus-ring">Accetta</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var acceptBtn = document.getElementById('cookie-accept');
+      var storageKey = 'vagnoli_cookie_consent';
+      function hasConsent() {
+        try { return localStorage.getItem(storageKey) === 'accepted'; } catch (e) { return false; }
+      }
+      if (!hasConsent() && banner) banner.classList.remove('hidden');
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+          try { localStorage.setItem(storageKey, 'accepted'); } catch (e) {}
+          if (banner) banner.classList.add('hidden');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

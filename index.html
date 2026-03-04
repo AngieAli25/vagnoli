@@ -9,6 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <title>Vagnoli Srl | Strutture Metalliche su Misura per il Settore Industriale</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23b56749' width='32' height='32' rx='4'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>V</text></svg>" type="image/svg+xml">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"LocalBusiness","name":"Vagnoli Srl","description":"Strutture metalliche su misura per il settore industriale. Ristrutturazione, coperture, ampliamenti. Lombardia, Veneto, Emilia-Romagna, Toscana.","url":"https://www.vagnolisrl.com","areaServed":["Lombardia","Veneto","Emilia-Romagna","Toscana"]}
   </script>
@@ -38,6 +39,7 @@
     .focus-ring:focus { outline: 2px solid #b56749; outline-offset: 2px; }
     .skip-link { position: absolute; top: -100px; left: 0; z-index: 100; padding: 0.75rem 1rem; background: #b56749; color: white; font-weight: 600; transition: top 0.2s; }
     .skip-link:focus { top: 0; }
+    .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
@@ -222,7 +224,7 @@
           </article>
           <article class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg hover:-translate-y-1 border-l-4 border-transparent hover:border-primary transition">
             <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-4">04</div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Collaudo e le Documentazione</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Collaudo e Documentazione</h3>
             <p class="text-gray-600 text-sm">Consegniamo l'opera completata, collaudata e con tutta la documentazione tecnica e certificazioni necessarie.</p>
           </article>
         </div>
@@ -293,7 +295,11 @@
           <li class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>Consulenza tecnica inclusa</li>
         </ul>
 
-        <form id="contact-form" class="bg-white shadow-2xl rounded-2xl p-8 md:p-12 max-w-3xl mx-auto" novalidate>
+        <form id="contact-form" class="bg-white shadow-2xl rounded-2xl p-8 md:p-12 max-w-3xl mx-auto relative" novalidate>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website_url">Lascia vuoto</label>
+            <input type="text" id="website_url" name="website_url" class="honeypot" tabindex="-1" autocomplete="off">
+          </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="nome" class="block text-sm font-semibold text-gray-700 mb-2">Nome e Cognome *</label>
@@ -399,7 +405,7 @@
           </div>
           <div class="mt-6 flex items-start gap-3">
             <input type="checkbox" id="privacy" name="privacy" required class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" aria-required="true">
-            <label for="privacy" class="text-sm text-gray-700">Ho letto e accetto l'<a href="#" class="text-primary underline hover:no-underline">informativa privacy</a> *</label>
+            <label for="privacy" class="text-sm text-gray-700">Ho letto e accetto l'<a href="privacy.html#privacy-policy" class="text-primary underline hover:no-underline">informativa privacy</a> *</label>
           </div>
           <span id="privacy-error" class="text-red-600 text-sm mt-1 hidden block" role="alert"></span>
           <div class="mt-8">
@@ -425,8 +431,8 @@
         <div>
           <h3 class="font-semibold text-white mb-2 md:mb-3">Link Utili</h3>
           <ul class="flex flex-col md:flex-row gap-2 md:gap-4" role="list">
-            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+            <li><a href="privacy.html#privacy-policy" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="privacy.html#cookie-policy" class="hover:text-white transition">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
@@ -441,7 +447,35 @@
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
   </button>
 
+  <!-- Cookie consent banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] p-4 md:p-6" role="dialog" aria-label="Informativa cookie">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p class="text-gray-700 text-sm md:text-base">
+        Utilizziamo cookie essenziali e analitici anonimi per migliorare la tua esperienza e il nostro sito. Continuando la navigazione accetti la nostra <a href="privacy.html#cookie-policy" class="text-primary font-medium underline hover:no-underline">Cookie Policy</a>.
+      </p>
+      <div class="flex flex-shrink-0 gap-3">
+        <a href="privacy.html#cookie-policy" class="px-4 py-2.5 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 font-medium transition focus-ring">Maggiori info</a>
+        <button type="button" id="cookie-accept" class="px-5 py-2.5 bg-primary hover:bg-secondary text-white font-semibold rounded-lg transition focus-ring">Accetta</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    (function () {
+      var cookieBanner = document.getElementById('cookie-banner');
+      var cookieAccept = document.getElementById('cookie-accept');
+      var cookieKey = 'vagnoli_cookie_consent';
+      function hasCookieConsent() {
+        try { return localStorage.getItem(cookieKey) === 'accepted'; } catch (e) { return false; }
+      }
+      if (cookieBanner && !hasCookieConsent()) cookieBanner.classList.remove('hidden');
+      if (cookieAccept) {
+        cookieAccept.addEventListener('click', function () {
+          try { localStorage.setItem(cookieKey, 'accepted'); } catch (e) {}
+          if (cookieBanner) cookieBanner.classList.add('hidden');
+        });
+      }
+    })();
     (function () {
       var navToggle = document.getElementById('nav-toggle');
       var navMenu = document.getElementById('nav-menu');
@@ -487,6 +521,8 @@
         }
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          var honeypot = document.getElementById('website_url');
+          if (honeypot && honeypot.value.trim() !== '') { return; }
           var valid = true;
           requiredIds.forEach(function (id) {
             var el = document.getElementById(id);
@@ -507,9 +543,7 @@
             var btn = document.getElementById('submit-btn');
             if (btn) { btn.disabled = true; btn.textContent = 'Invio in corso...'; }
             setTimeout(function () {
-              if (btn) { btn.disabled = false; btn.textContent = 'Richiedi Sopralluogo Gratuito →'; }
-              alert('Grazie! Ti contatteremo entro 24 ore.');
-              form.reset();
+              window.location.href = 'thankyou.html';
             }, 800);
           }
         });
