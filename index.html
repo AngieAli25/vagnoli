@@ -588,13 +588,15 @@
               source: 'landing-vagnoli'
             };
 
-            var formEncodedPayload = new URLSearchParams(payload).toString();
+            var formData = new FormData();
+            Object.keys(payload).forEach(function (key) {
+              formData.append(key, String(payload[key] == null ? '' : payload[key]));
+            });
 
             fetch(webhookUrl, {
               method: 'POST',
               mode: 'no-cors',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-              body: formEncodedPayload
+              body: formData
             })
               .then(function () {
                 window.location.href = 'thankyou.html';
