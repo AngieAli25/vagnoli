@@ -532,6 +532,7 @@
 
       var form = document.getElementById('contact-form');
       if (form) {
+        var webhookUrl = 'https://hook.eu2.make.com/rr8xd4e4lgv9n7hfxz9y8u3t1mlucehd';
         var requiredIds = ['nome', 'azienda', 'email', 'telefono', 'provincia'];
         requiredIds.forEach(function (id) {
           var el = document.getElementById(id);
@@ -571,9 +572,35 @@
           if (valid) {
             var btn = document.getElementById('submit-btn');
             if (btn) { btn.disabled = true; btn.textContent = 'Invio in corso...'; }
-            setTimeout(function () {
-              window.location.href = 'thankyou.html';
-            }, 800);
+
+            var payload = {
+              nome: document.getElementById('nome') ? document.getElementById('nome').value.trim() : '',
+              azienda: document.getElementById('azienda') ? document.getElementById('azienda').value.trim() : '',
+              ruolo: document.getElementById('ruolo') ? document.getElementById('ruolo').value.trim() : '',
+              email: document.getElementById('email') ? document.getElementById('email').value.trim() : '',
+              telefono: document.getElementById('telefono') ? document.getElementById('telefono').value.trim() : '',
+              provincia: document.getElementById('provincia') ? document.getElementById('provincia').value.trim() : '',
+              tipo_progetto: document.getElementById('tipo-progetto') ? document.getElementById('tipo-progetto').value.trim() : '',
+              messaggio: document.getElementById('messaggio') ? document.getElementById('messaggio').value.trim() : '',
+              privacy_accepted: !!(privacy && privacy.checked),
+              page_url: window.location.href,
+              submitted_at: new Date().toISOString(),
+              source: 'landing-vagnoli'
+            };
+
+            fetch(webhookUrl, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+              .then(function () {
+                window.location.href = 'thankyou.html';
+              })
+              .catch(function () {
+                if (btn) { btn.disabled = false; btn.textContent = 'Richiedi Sopralluogo Gratuito →'; }
+                alert('Si è verificato un problema durante l\'invio. Riprova tra qualche minuto.');
+              });
           }
         });
       }
